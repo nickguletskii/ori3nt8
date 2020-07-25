@@ -5,7 +5,7 @@ from PySide2.QtGui import QImage
 from grundzeug.container.di import Inject
 from typing_extensions import Annotated
 
-from ori3nt8.training.preprocessing import PreprocessingConfig
+from ori3nt8.common.preprocessing import PreprocessingConfig
 
 
 class PreprocessingPipeline():

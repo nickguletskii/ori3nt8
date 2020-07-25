@@ -14,8 +14,9 @@ from ori3nt8.training.containers import build_container
 from ori3nt8.training.model import Ori3nt8LightningModel
 from ori3nt8.training.models import EfficientNetConfig, EfficientNetModelFactory, AbstractModelFactory
 from ori3nt8.training.optimizers import AdamConfig, AdamOptimizerFactory, AbstractOptimizerFactory
-from ori3nt8.training.preprocessing import PreprocessingConfig, DefaultPreprocessingFactory, \
+from ori3nt8.training.preprocessing import DefaultPreprocessingFactory, \
     AbstractPreprocessingFactory
+from ori3nt8.common.preprocessing import PreprocessingConfig
 
 
 @configuration(["export"])
