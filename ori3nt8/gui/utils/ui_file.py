@@ -22,7 +22,7 @@ def compile_ui_files():
     for ui_file in ui_files:
         cmd = [
             f"pyside2-uic",
-            "-o", ui_file.with_name('Ui_' + ui_file.name).with_suffix('.py'),
+            "-o", str(ui_file.with_name('Ui_' + ui_file.name).with_suffix('.py')),
             str(ui_file)
         ]
         process = subprocess.run(cmd)
