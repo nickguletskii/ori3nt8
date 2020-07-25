@@ -20,6 +20,9 @@ jobs:
         pip install --upgrade pip setuptools
         pip install --upgrade -r requirements.txt
         pip install --upgrade torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    - name: Build UI files
+      run: |
+        python -m ori3nt8.gui.utils.ui_file
     - name: Download model
       run: |
         wget --quiet -O mc -c https://dl.min.io/client/mc/release/linux-amd64/mc
