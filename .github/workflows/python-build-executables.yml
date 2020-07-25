@@ -38,12 +38,12 @@ jobs:
         wget --quiet -c -O appimagetool-x86_64.AppImage https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-x86_64.AppImage
         chmod +x ./appimagetool-x86_64.AppImage
         ./appimagetool-x86_64.AppImage ori3nt8 ori3nt8.AppImage
+        cd ..
     - name: Determine upload URL
       id: detect_upload_url
       run: |
         RELEASE_ID=$(jq --raw-output '.release.id' "$GITHUB_EVENT_PATH")
-        FILENAME="ori3nt8.AppImage"
-        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}"
+        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets"
         echo "::set-output name=upload_url::${UPLOAD_URL}"
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
@@ -51,6 +51,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.detect_upload_url.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: ./my-artifact.zip
-        asset_name: my-artifact.zip
-        asset_content_type: application/zip
+        asset_path: ./dist/ori3nt8.AppImage
+        asset_name: ori3nt8.AppImage
+        asset_content_type: application/x-executable
