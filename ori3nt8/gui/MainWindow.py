@@ -15,7 +15,7 @@
 from pathlib import Path
 
 from PySide2.QtGui import QIcon
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QFileSystemModel, QHeaderView
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QFileSystemModel, QHeaderView, QMessageBox
 from grundzeug.container import Injector
 from grundzeug.container.di import Inject
 from typing_extensions import Annotated
@@ -51,7 +51,19 @@ class MainWindow(QMainWindow):
 
     def select_and_open_directory(self):
         dir = QFileDialog.getExistingDirectory(caption="Select the directory to process")
-        self.open_directory(dir)
+
+        button = QMessageBox.warning(
+            self,
+            f"Please make sure that you have BACKED UP your photos before opening them in Ori3nt8!",
+            "Ori3nt8 is experimental and may ruin your EXIF metadata, or simply incorrectly "
+            "rotate your photos. Please make sure that you have backed up the selected folder "
+            "before continuing.",
+            buttons=QMessageBox.Open | QMessageBox.Cancel,
+            defaultButton=QMessageBox.Cancel
+        )
+        
+        if button == QMessageBox.Open:
+            self.open_directory(dir)
 
     def open_directory(self, dir):
         model = QFileSystemModel(self.ui.fileTreeView)
