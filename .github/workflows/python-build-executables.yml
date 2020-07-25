@@ -76,7 +76,7 @@ jobs:
         $imagemagick_version = "7.0.10-24-portable-Q16-HDRI-x64"
         $url = "https://imagemagick.org/download/binaries/ImageMagick-${imagemagick_version}.zip"
         Invoke-WebRequest -Uri $url -OutFile imagemagick.zip
-        Expand-Archive -LiteralPath imagemagick.zip -DestinationPath
+        Expand-Archive -LiteralPath imagemagick.zip -DestinationPath imagemagick
     - name: Generate icons
       run: |
          .\imagemagick\convert.exe .\resources\ori3nt8.svg -background none -define icon:auto-resize="256,128,64,32,16" resources/ori3nt8.ico
