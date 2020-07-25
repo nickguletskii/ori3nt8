@@ -24,7 +24,7 @@ jobs:
       run: |
         wget --quiet -O mc -c https://dl.min.io/client/mc/release/linux-amd64/mc
         chmod +x mc
-        ./mc cp site/ori3nt8-models/network.onnx resources/network.onxx
+        ./mc cp site/ori3nt8-models/network.onnx resources/network.onnx
       env:
         MC_HOST_site: ${{ secrets.MC_HOST_site }}
     - name: Build
