@@ -20,6 +20,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    - name: Download model
+      run: |
+        wget https://dl.min.io/client/mc/release/linux-amd64/mc
+        chmod +x mc
+        ./mc cp site/ori3nt8-models/network.onnx resources/network.onxx
     - name: Build
       run: |
         pyinstaller ori3nt8.spec
