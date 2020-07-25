@@ -17,9 +17,9 @@ jobs:
         python-version: '3.7'
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+        python -m pip install --upgrade pip setuptools
+        pip install -r --upgrade requirements.txt
+        pip install --upgrade torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
     - name: Download model
       run: |
         wget --quiet -O mc -c https://dl.min.io/client/mc/release/linux-amd64/mc
