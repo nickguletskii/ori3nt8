@@ -1,0 +1,43 @@
+[trainer]
+# Training precision, set to 16 for half-precision training using APEX or 32 for full-precision training.
+precision = 16
+# The random seed to set before training
+seed = 42
+# Number of GPUs to use for training
+gpus = 1
+
+[training]
+# Batch size to use during training and validation
+batch_size = 64
+# Number of epochs to train for
+epochs = 30
+
+[model.efficientnet]
+# Default name of the model that will be used as the backbone
+model_name = "efficientnet_b1"
+# EfficientNet's drop rate
+drop_rate = 0.2
+# EfficientNet's drop connect rate
+drop_connect_rate = 0.2
+# Set to true to use pretrained weights
+pretrained = true
+
+[optimizers.adam]
+# Adam's initial learning rate
+learning_rate = 0.0001
+# Adam's beta1 parameter
+beta1 = 0.9
+# Adam's beta2 parameter
+beta2 = 0.999
+# Weight decay
+weight_decay = 0.0001
+
+[preprocessing]
+# The image tensor normalization mean
+normalization_mean = [ 0.485, 0.456, 0.406 ]
+# The image tensor normalization standard deviation
+normalization_std = [ 0.229, 0.224, 0.225 ]
+# The input image will be resized so that the length of its shorter side mathches this number
+resize_to = 256
+# The resized image will be cropped so that the input to the classifier is a square with a side that matches this number
+crop_to = 240
