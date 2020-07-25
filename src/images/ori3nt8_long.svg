@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 457.19997 135.46667"
+   height="512"
+   width="1728">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient1437">
+      <stop
+         style="stop-color:#2b47ac;stop-opacity:1;"
+         offset="0"
+         id="stop1441" />
+      <stop
+         style="stop-color:#0086f0;stop-opacity:1"
+         offset="1"
+         id="stop1443" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="186.93332"
+       x2="8.4666662"
+       y1="284.29999"
+       x1="8.4666662"
+       id="linearGradient1439"
+       xlink:href="#linearGradient1437" />
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-161.53332)"
+     id="layer1">
+    <path
+       id="path1374"
+       d="m 122.76667,284.29999 v -101.6 l -50.800004,50.8 z"
+       style="fill:#808000;fill-opacity:1;stroke:#ffff00;stroke-width:4.23333311;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       id="path1380"
+       d="M 114.3,174.23332 H 12.7 l 50.799999,50.8 z"
+       style="fill:#295135;fill-opacity:1;stroke:#00ff00;stroke-width:4.23333311;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
+    <path
+       id="path1403"
+       d="M 105.83333,284.29999 12.7,191.16665 v 93.13334 h 93.13333"
+       style="fill:url(#linearGradient1439);fill-opacity:1;stroke:#00ffff;stroke-width:4.23333311;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="flowRoot820"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:320.00003052px;line-height:1.25;font-family:Raleway;-inkscape-font-specification:Raleway;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,9.0871639,162.06786)"
+       aria-label="Ori3nt8">
+      <path
+         id="path845"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 632.64001,361.81809 q -24.96,0 -45.12,-9.6 -20.16,-9.60001 -34.88001,-25.92001 -14.72,-16.64 -22.72,-37.12 -8,-20.8 -8,-42.56 0,-22.72001 8.32,-43.20001 8.64,-20.8 23.36,-36.8 15.04001,-16.32 35.52001,-25.6 20.48,-9.60001 44.48,-9.60001 24.64,0 44.80001,9.92001 20.48,9.92 34.88,26.56 14.4,16.64 22.08,37.12 8,20.48 8,42.24001 0,22.4 -8.32,43.2 -8,20.48 -23.04,36.8 -14.72,16 -35.2,25.28001 -20.16001,9.28 -44.16001,9.28 z m -65.92,-115.20001 q 0,14.72 4.48,28.48 4.48,13.76 12.8,24.64 8.64,10.56 20.8,16.96 12.48,6.08 28.16,6.08 16.32,0 28.48,-6.4 12.16001,-6.72 20.48001,-17.6 8.64,-10.88 12.8,-24.64 4.16,-13.76 4.16,-27.52 0,-14.72001 -4.48,-28.16001 -4.48,-13.76 -13.12,-24.32 -8.64,-10.88 -20.80001,-16.96 -12.16,-6.4 -27.84,-6.4 -15.68,0 -28.16,6.72 -12.16,6.4 -20.8,17.28 -8.32,10.56 -12.8,24.32 -4.16,13.44 -4.16,27.52001 z" />
+      <path
+         id="path847"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 870.43003,229.65807 q -19.84001,0.32 -35.20001,7.68 -15.36,7.04001 -22.4,21.12001 v 101.76001 h -42.56 V 192.53807 h 39.36 v 35.84 q 8.96,-17.28 22.72,-27.2 14.08,-9.92 29.44001,-10.88 3.2,0.32 5.12,0.32 1.92,-0.32 3.52,0.32 z" />
+      <path
+         id="path849"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="M 894.02003,360.21809 V 192.53807 h 42.56001 v 167.68002 z m 0,-191.36002 v -42.24001 h 42.56001 v 42.24001 z" />
+      <path
+         id="path851"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 1077.975,284.69808 q 13.76,2.24 23.68,10.24 9.92,8 15.36,20.16 5.76,11.84 5.76,26.88 0,19.52001 -10.24,34.24001 -10.24,15.04 -28.8,23.04 -18.56,8 -44.16,8 -24.32,0 -43.19997,-8 -18.56,-7.68 -31.04,-22.72 l 24.32,-30.08001 q 8.32,9.92001 19.83997,15.68001 11.52,6.08 28.8,6.08 19.52,0 29.76,-8 10.24,-7.68 10.24,-23.36001 0,-16.64 -11.84,-25.6 -11.84,-8.96 -35.84,-8.96 h -8.96 v -32.32 h 10.24 q 19.52,0 30.08,-8.64 10.88,-8.96 10.88,-22.40001 0,-8.64 -3.84,-14.4 -3.84,-5.76 -11.2,-8.64 -7.36,-2.88 -16.96,-2.88 -14.72,0 -26.56,6.72 -11.52,6.4 -18.87997,18.88 l -26.88,-30.08 q 6.72,-9.6 18.56,-16.96 11.84,-7.68 26.87997,-11.52 15.36,-4.16 31.68,-4.16 21.76,0 38.08,7.04 16.64,7.04 25.6,19.84 9.28,12.48 9.28,29.76 0,12.48001 -5.12,23.68001 -4.8,10.88 -14.08,18.56 -9.28,7.36 -21.44,9.92 z" />
+      <path
+         id="path853"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 1310.4851,360.21809 h -42.88 v -94.08001 q 0,-20.16 -7.04,-29.44001 -6.72,-9.28 -19.52,-9.28 -8.64,0 -17.6,4.48 -8.64,4.48 -15.68,12.48001 -6.72,7.68 -10.56,17.92 v 97.92001 h -42.56 V 192.53807 h 38.72 v 31.04 q 6.4,-10.88 16.32,-18.24 9.92,-7.36 22.72,-11.52 12.8,-4.16 27.52,-4.16 15.68,0 25.6,5.76 10.24,5.44 15.36,15.04 5.44,9.6 7.36,21.44 2.24,11.52001 2.24,23.36001 z" />
+      <path
+         id="path855"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 1448.2501,351.57809 q -5.76,2.56 -13.44,5.44 -7.36,2.56 -16.32,4.16 -8.64,1.92 -17.6,1.92 -12.16,0 -22.08,-4.16 -9.92,-4.16 -16,-13.12001 -5.76,-9.28 -5.76,-24 v -96.64001 h -21.76 v -32.64 h 21.76 v -54.40001 h 43.2 v 54.40001 h 35.2 v 32.64 h -35.2 v 82.24001 q 0.32,8.64 4.8,12.8 4.48,3.84 11.52,3.84 6.4,0 12.8,-2.24 6.4,-2.56 10.56,-4.48 z" />
+      <path
+         id="path857"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:320.00003052px;font-family:Raleway;-inkscape-font-specification:'Raleway Bold'"
+         d="m 1630.5751,293.01808 q 0,21.12 -11.52,36.8 -11.2,15.68 -30.08,24.64001 -18.56,8.64 -41.6,8.64 -22.4,0 -41.28,-9.28 -18.56,-9.28001 -29.76,-25.28001 -10.88,-16 -10.88,-37.12 0,-12.8 5.12,-23.04 5.44,-10.56 13.76,-17.92 8.32,-7.68001 16.96,-11.52001 -8,-4.16 -14.72,-10.56 -6.4,-6.4 -10.24,-14.72 -3.84,-8.64 -3.84,-17.6 0,-15.36 6.72,-26.88 7.04,-11.84 17.92,-19.84 11.2,-8.32 24.32,-12.16001 13.44,-4.16 26.24,-4.16 13.12,0 26.56,4.16 13.44,3.84001 24.64,11.84001 11.2,8 17.92,19.84 6.72,11.84 6.72,26.88 0,8.96 -3.84,17.6 -3.84,8.32 -10.56,15.04 -6.4,6.72 -14.4,10.56 9.28,4.48001 17.28,12.16001 8,7.68 13.12,18.24 5.44,10.56 5.44,23.68 z m -43.52,-2.56 q 0,-8.32 -3.52,-14.4 -3.2,-6.4 -8.96,-10.56 -5.44,-4.48 -12.48,-6.72 -7.04,-2.24 -14.4,-2.24 -9.92,0 -18.88,4.16 -8.96,4.16 -14.4,11.84 -5.44,7.68 -5.44,18.24 0,7.36 3.2,13.44 3.52,6.08 8.96,10.88 5.44,4.48 12.48,7.04 7.04,2.24 14.4,2.24 10.24,0 19.2,-4.48 8.96,-4.48 14.4,-12.16 5.44,-7.68 5.44,-17.28 z m -71.04,-93.12001 q 0,8.64 4.8,14.72 4.8,6.08 12.16,9.28 7.68,2.88 15.04,2.88 7.36,0 14.72,-3.2 7.36,-3.2 12.16,-8.96 5.12,-6.08 5.12,-15.04 0,-7.68 -4.48,-13.76 -4.48,-6.08 -11.84,-9.28 -7.04,-3.2 -16,-3.2 -8.32,0 -15.68,3.52 -7.36,3.2 -11.84,9.28 -4.16,6.08 -4.16,13.76 z" />
+    </g>
+  </g>
+</svg>

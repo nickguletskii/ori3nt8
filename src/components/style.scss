@@ -1,0 +1,7 @@
+@import "./variables.scss";
+@import "~bulma/bulma.sass";
+
+.primary-hero {
+  display: flex;
+  background: linear-gradient(to top, $primary, $secondary);
+}
