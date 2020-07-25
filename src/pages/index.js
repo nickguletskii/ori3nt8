@@ -62,6 +62,7 @@ const IndexPage = () => (
         <h1 className="title">How do I use it?</h1>
         <h2 className="subtitle">
           <ol>
+            <li>Backup your photos.</li>
             <li>
               Open a directory by pressing Ctrl + O, or selecting File &gt; Open
               Directory.
