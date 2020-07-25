@@ -32,8 +32,8 @@ jobs:
         MC_HOST_site: ${{ secrets.MC_HOST_site }}
     - name: Build
       run: |
-        pyinstaller ori3nt8.spec
-        cp dist/ori3nt8/resources/ori3nt8.svg dist/ori3nt8/ori3nt8.svg 
+        pyinstaller ori3nt8_linux.spec
+        cp dist/ori3nt8/resources/ori3nt8.svg dist/ori3nt8/ori3nt8.svg
         cp resources/appimage/AppRun dist/ori3nt8/AppRun
         chmod +x dist/ori3nt8/AppRun
         cp resources/appimage/ori3nt8.desktop dist/ori3nt8/ori3nt8.desktop
@@ -50,4 +50,50 @@ jobs:
         upload_url: ${{ github.event.release.upload_url }}
         asset_path: ./dist/ori3nt8.AppImage
         asset_name: ori3nt8.AppImage
+        asset_content_type: application/x-executable
+
+  build_windows:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip setuptools pywin32
+        pip install --upgrade -r requirements.txt
+        pip install --upgrade torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    - name: Build UI files
+      run: |
+        python -m ori3nt8.gui.utils.ui_file
+    - name: Download imagemagick
+      run: |
+        $imagemagick_version = "7.0.10-24-portable-Q16-HDRI-x64"
+        $url = "https://imagemagick.org/download/binaries/ImageMagick-${imagemagick_version}.zip"
+        Invoke-WebRequest -Uri $url -OutFile imagemagick.zip
+        Expand-Archive -LiteralPath imagemagick.zip -DestinationPath
+    - name: Generate icons
+      run: |
+         .\imagemagick\convert.exe .\resources\ori3nt8.svg -background none -define icon:auto-resize="256,128,64,32,16" resources/ori3nt8.ico
+    - name: Download model
+      run: |
+        Invoke-WebRequest -Uri "https://dl.min.io/client/mc/release/windows-amd64/mc.exe" -OutFile mc.exe
+        mc.exe cp site/ori3nt8-models/network.onnx resources/network.onnx
+      env:
+        MC_HOST_site: ${{ secrets.MC_HOST_site }}
+    - name: Build
+      run: |
+        pyinstaller ori3nt8_windows.spec
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ./dist/ori3nt8.exe
+        asset_name: ori3nt8.exe
         asset_content_type: application/x-executable
