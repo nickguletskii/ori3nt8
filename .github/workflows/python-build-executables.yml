@@ -39,12 +39,6 @@ jobs:
         chmod +x ./appimagetool-x86_64.AppImage
         ./appimagetool-x86_64.AppImage ori3nt8 ori3nt8.AppImage
         cd ..
-    - name: Determine upload URL
-      id: detect_upload_url
-      run: |
-        RELEASE_ID=$(jq --raw-output '.release.id' "$GITHUB_EVENT_PATH")
-        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets"
-        echo "::set-output name=upload_url::${UPLOAD_URL}"
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
