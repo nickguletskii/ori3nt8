@@ -83,7 +83,7 @@ jobs:
     - name: Download model
       run: |
         Invoke-WebRequest -Uri "https://dl.min.io/client/mc/release/windows-amd64/mc.exe" -OutFile mc.exe
-        mc.exe cp site/ori3nt8-models/network.onnx resources/network.onnx
+        ./mc.exe cp site/ori3nt8-models/network.onnx resources/network.onnx
       env:
         MC_HOST_site: ${{ secrets.MC_HOST_site }}
     - name: Build
