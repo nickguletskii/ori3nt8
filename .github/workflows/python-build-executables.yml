@@ -1,0 +1,49 @@
+name: Build and upload executables
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build_appimage:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.7'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+    - name: Build
+      run: |
+        pyinstaller ori3nt8.spec
+        cp dist/ori3nt8/resources/ori3nt8.svg dist/ori3nt8/ori3nt8.svg 
+        cp resources/appimage/AppRun dist/ori3nt8/AppRun
+        chmod +x dist/ori3nt8/AppRun
+        cp resources/appimage/ori3nt8.desktop dist/ori3nt8/ori3nt8.desktop
+        cd dist
+        wget --quiet -c -O appimagetool-x86_64.AppImage https://github.com/AppImage/AppImageKit/releases/download/12/appimagetool-x86_64.AppImage
+        chmod +x ./appimagetool-x86_64.AppImage
+        ./appimagetool-x86_64.AppImage ori3nt8 ori3nt8.AppImage
+    - name: Determine upload URL
+      id: detect_upload_url
+      run: |
+        RELEASE_ID=$(jq --raw-output '.release.id' "$GITHUB_EVENT_PATH")
+        FILENAME="ori3nt8.AppImage"
+        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}"
+        echo "::set-output name=upload_url::${UPLOAD_URL}"
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.detect_upload_url.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./my-artifact.zip
+        asset_name: my-artifact.zip
+        asset_content_type: application/zip
