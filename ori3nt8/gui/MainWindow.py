@@ -14,16 +14,20 @@
 
 from pathlib import Path
 
-from PySide2.QtGui import QIcon
+from PySide2.QtCore import QUrl
+from PySide2.QtGui import QIcon, QDesktopServices
 from PySide2.QtWidgets import QMainWindow, QFileDialog, QFileSystemModel, QHeaderView, QMessageBox
 from grundzeug.container import Injector
 from grundzeug.container.di import Inject
 from typing_extensions import Annotated
 
+from ori3nt8.gui.AboutDialog import AboutDialog
 from ori3nt8.gui.ImageContainerWidget import ImageContainerWidget
 from ori3nt8.gui.ui.Ui_MainWindow import Ui_MainWindow
 from ori3nt8.gui.utils.qtree import ModelIndexNavigator
 from ori3nt8.utils.resources import resource_path
+
+WEBSITE_URL = "https://ori3nt8.nickguletskii.com"
 
 
 class MainWindow(QMainWindow):
@@ -44,10 +48,18 @@ class MainWindow(QMainWindow):
         self.ui.actionRotate_counterclockwise.triggered.connect(self.image_widget.rotate_counterclockwise)
         self.ui.actionAutomatically_apply.toggled.connect(self.image_widget.set_apply_automatically)
         self.ui.actionApply_suggested_orientation.triggered.connect(self.image_widget.apply_suggested_orientation)
+        self.ui.actionWebsite.triggered.connect(self.launch_website)
+        self.ui.actionAbout.triggered.connect(self.launch_about)
 
         self.file_tree_view_navigator = ModelIndexNavigator.for_selecting_current_item_in_tree_view(
             self.ui.fileTreeView
         )
+
+    def launch_website(self):
+        QDesktopServices.openUrl(QUrl(WEBSITE_URL))
+
+    def launch_about(self):
+        AboutDialog().exec_()
 
     def select_and_open_directory(self):
         dir = QFileDialog.getExistingDirectory(caption="Select the directory to process")
@@ -61,7 +73,7 @@ class MainWindow(QMainWindow):
             buttons=QMessageBox.Open | QMessageBox.Cancel,
             defaultButton=QMessageBox.Cancel
         )
-        
+
         if button == QMessageBox.Open:
             self.open_directory(dir)
 
