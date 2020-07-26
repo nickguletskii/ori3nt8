@@ -6,6 +6,9 @@ module.exports = {
       "Software for automatically rotating photos/fixing the JPEG orientation using a neural network",
     keywords: "Image, Photo, Rotation, Orientation",
     github: "https://github.com/nickguletskii/ori3nt8",
+    applicationCategory: "Multimedia",
+    operatingSystems: "Windows 10, Linux",
+    downloadURL: "https://github.com/nickguletskii/ori3nt8/releases/latest",
     siteUrl: "https://ori3nt8.nickguletskii.com",
   },
   plugins: [

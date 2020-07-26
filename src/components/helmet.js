@@ -13,6 +13,9 @@ export default () => (
             author
             description
             keywords
+            applicationCategory
+            operatingSystems
+            downloadURL
           }
         }
       }
@@ -29,6 +32,9 @@ export default () => (
         <html lang="en" />
         <meta itemprop="name" content={data.site.siteMetadata.title} />
         <meta itemprop="author" content={data.site.siteMetadata.author} />
+        <meta itemprop="applicationCategory" content={data.site.siteMetadata.applicationCategory} />
+        <meta itemprop="operatingSystems" content={data.site.siteMetadata.operatingSystems} />
+        <meta itemprop="downloadURL" content={data.site.siteMetadata.downloadURL} />
         <meta
           itemprop="description"
           content={data.site.siteMetadata.description}
