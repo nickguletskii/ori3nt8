@@ -1054,7 +1054,7 @@ limitations under the License.
 
 """
     whitelist = ["torchvision", "torch", "wheel", "setuptools"]
-    blacklist = ["tensorboard-plugin-wit"]
+    blacklist = ["tensorboard-plugin-wit", "requirements-parser"] # Packages which are not included in the executable
     with Path("requirements.txt").open("r") as fd:
         for req in requirements.parse(fd):
             whitelist.append(req.name)
