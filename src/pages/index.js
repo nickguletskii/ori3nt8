@@ -22,8 +22,6 @@ const IndexPage = ({ data }) => (
   <Layout includeNavbar={false}>
     <section
       className="hero primary-hero is-fullheight-with-navbar"
-      itemScope
-      itemType="http://schema.org/SoftwareApplication"
     >
       <div className="hero-head">
         <Navbar />
