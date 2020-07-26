@@ -4,8 +4,22 @@ import Layout from "../components/layout";
 import { FaGithub, FaDownload } from "react-icons/fa";
 import Navbar from "../components/navbar";
 import ori3nt8Screenshot from "../images/ori3nt8_screenshot.png";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
-const IndexPage = () => (
+export const query = graphql`
+  query {
+    screen: file(relativePath: { eq: "ori3nt8_screenshot.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => (
   <Layout includeNavbar={false}>
     <section className="hero primary-hero is-fullheight-with-navbar">
       <div className="hero-head">
@@ -16,8 +30,12 @@ const IndexPage = () => (
           <article className="media">
             <div className="media-content">
               <div className="content">
-                <figure class="image is-4x3">
-                  <img src={ori3nt8Screenshot} alt="A screenshot of Ori3nt8" />
+                <figure className="image is-4x3">
+                  <Img
+                    className="has-shadow"
+                    fluid={data.screen.childImageSharp.fluid}
+                    alt="A screenshot of Ori3nt8"
+                  />
                 </figure>
                 <h1 className="is-uppercase is-size-1 has-text-white has-text-centered">
                   Fix rotated photos in a breeze
