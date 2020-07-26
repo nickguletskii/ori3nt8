@@ -92,7 +92,7 @@ jobs:
         MC_HOST_site: ${{ secrets.MC_HOST_site }}
     - name: Build
       run: |
-        pyinstaller ori3nt8_windows.spec
+        python -m PyInstaller ori3nt8_windows.spec
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
       env:
