@@ -27,7 +27,8 @@ export default () => (
         <meta name="keywords" content={data.site.siteMetadata.keywords} />
         <title>{data.site.siteMetadata.title}</title>
         <html lang="en" />
-        <meta itemprop="name" content={data.site.siteMetadata.author} />
+        <meta itemprop="name" content={data.site.siteMetadata.title} />
+        <meta itemprop="author" content={data.site.siteMetadata.author} />
         <meta
           itemprop="description"
           content={data.site.siteMetadata.description}
