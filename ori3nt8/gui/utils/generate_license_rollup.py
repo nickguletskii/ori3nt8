@@ -14,6 +14,8 @@
 from argparse import Namespace, ArgumentParser
 from pathlib import Path
 
+import requirements
+from pip._vendor.packaging.utils import canonicalize_name
 from piplicenses import get_packages
 
 """
@@ -21,19 +23,6 @@ Quick and dirty script to generate a rollup of dependency licenses
 """
 
 _license_overrides = {
-    "tensorboard-plugin-wit":
-        """
-        Copyright 2018 The TensorFlow Authors. All Rights Reserved.
-        Licensed under the Apache License, Version 2.0 (the "License");
-        you may not use this file except in compliance with the License.
-        You may obtain a copy of the License at
-            http://www.apache.org/licenses/LICENSE-2.0
-        Unless required by applicable law or agreed to in writing, software
-        distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions and
-        limitations under the License.
-        """,
     "protobuf":
         """
         Copyright 2008 Google Inc.  All rights reserved.
@@ -1022,7 +1011,7 @@ limitations under the License.
 """
 }
 
-blacklist = ["aws-sam-cli"]
+
 
 if __name__ == '__main__':
     parser = ArgumentParser()
@@ -1045,6 +1034,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 """
+    whitelist =["torchvision", "torch", "wheel", "setuptools"]
+    blacklist = ["tensorboard-plugin-wit"]
+    with Path("requirements.txt").open("r") as fd:
+        for req in requirements.parse(fd):
+            whitelist.append(req.name)
 
     unknown_packages = []
     for pkg in get_packages(Namespace(
@@ -1055,6 +1049,8 @@ limitations under the License.
             }
     )):
         cur_license_text = pkg["name"] + "\n" + ("".join(["=" for i in range(len(pkg["name"]))])) + "\n\n"
+        if pkg["name"] not in whitelist:
+            continue
         if pkg["name"] in blacklist:
             continue
         if pkg["name"] in _license_overrides:
