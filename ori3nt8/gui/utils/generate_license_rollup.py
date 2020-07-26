@@ -1022,6 +1022,8 @@ limitations under the License.
 """
 }
 
+blacklist = ["aws-sam-cli"]
+
 if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument("--output-path", type=Path, default=Path("resources") / "license_rollup.txt")
@@ -1043,6 +1045,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 """
+
+    unknown_packages = []
     for pkg in get_packages(Namespace(
             **{
                 "from": "meta",
@@ -1051,13 +1055,16 @@ limitations under the License.
             }
     )):
         cur_license_text = pkg["name"] + "\n" + ("".join(["=" for i in range(len(pkg["name"]))])) + "\n\n"
+        if pkg["name"] in blacklist:
+            continue
         if pkg["name"] in _license_overrides:
             pkg["licensetext"] = _license_overrides[pkg["name"]]
         if pkg["name"] in _notice_overrides:
             pkg["noticetext"] = _notice_overrides[pkg["name"]]
         has_notice = pkg["noticetext"] is not None and pkg["noticetext"] != "UNKNOWN"
         if pkg["licensetext"] == "UNKNOWN":
-            raise Exception(f'No license information for package {pkg["name"]}!')
+            unknown_packages.append(pkg["name"])
+            continue
         if has_notice:
             cur_license_text += "License\n-------\n\n"
         cur_license_text += pkg["licensetext"]
@@ -1068,6 +1075,9 @@ limitations under the License.
             cur_license_text += "\n"
 
         license_text += cur_license_text
+
+    if len(unknown_packages) > 0:
+        raise Exception(f'No license information for packages {unknown_packages}!')
 
     output_path: Path = args.output_path
     output_path.write_text(license_text)
