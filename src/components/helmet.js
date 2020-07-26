@@ -50,6 +50,18 @@ export default () => (
           content={data.site.siteMetadata.description}
         />
         <meta itemprop="image" content={ori3nt8Screenshot} />
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: data.site.siteMetadata.title,
+            operatingSystem: data.site.siteMetadata.operatingSystems,
+            applicationCategory: data.site.siteMetadata.applicationCategory,
+            abstract: data.site.siteMetadata.description,
+            downloadUrl: data.site.siteMetadata.downloadURL,
+          })}
+        </script>
       </Helmet>
     )}
   />
