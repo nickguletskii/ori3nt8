@@ -11,22 +11,12 @@
 #  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
-import subprocess
 
 from PySide2.QtWidgets import QDialog
 
 from ori3nt8.gui.ui.Ui_AboutDialog import Ui_AboutDialog
+from ori3nt8.gui.utils.version_information import get_version_tag
 from ori3nt8.utils.resources import resource_path
-
-
-def get_version_tag():
-    version_tag_path = resource_path() / "version_tag.txt"
-    if version_tag_path.exists():
-        return version_tag_path.read_text()
-    try:
-        return subprocess.check_output(["git", "describe", "--tags"]).decode().strip()
-    except (FileNotFoundError, subprocess.CalledProcessError):
-        return "(Unknown version)"
 
 
 class AboutDialog(QDialog):
