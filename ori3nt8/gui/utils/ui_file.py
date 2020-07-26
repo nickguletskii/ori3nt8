@@ -12,9 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-import sys
-
-from PySide2.scripts.pyside_tool import uic
+import subprocess
 
 from ori3nt8.utils.resources import root_path
 
@@ -22,12 +20,13 @@ from ori3nt8.utils.resources import root_path
 def compile_ui_files():
     ui_files = (root_path() / "ori3nt8" / "gui" / "ui").glob("**/*.ui")
     for ui_file in ui_files:
-        sys.argv = [
+        cmd = [
             f"pyside2-uic",
             "-o", str(ui_file.with_name('Ui_' + ui_file.name).with_suffix('.py')),
             str(ui_file)
         ]
-        assert uic() == 0
+        process = subprocess.run(cmd)
+        process.check_returncode()
 
 
 if __name__ == '__main__':
