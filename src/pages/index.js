@@ -3,7 +3,6 @@ import React from "react";
 import Layout from "../components/layout";
 import { FaGithub, FaDownload } from "react-icons/fa";
 import Navbar from "../components/navbar";
-import ori3nt8Screenshot from "../images/ori3nt8_screenshot.png";
 import Img from "gatsby-image";
 import { graphql } from "gatsby";
 
@@ -21,7 +20,11 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => (
   <Layout includeNavbar={false}>
-    <section className="hero primary-hero is-fullheight-with-navbar">
+    <section
+      className="hero primary-hero is-fullheight-with-navbar"
+      itemScope
+      itemType="http://schema.org/SoftwareApplication"
+    >
       <div className="hero-head">
         <Navbar />
       </div>
@@ -35,12 +38,16 @@ const IndexPage = ({ data }) => (
                     className="has-shadow"
                     fluid={data.screen.childImageSharp.fluid}
                     alt="A screenshot of Ori3nt8"
+                    itemProp="screenshot"
                   />
                 </figure>
                 <h1 className="is-uppercase is-size-1 has-text-white has-text-centered">
                   Fix rotated photos in a breeze
                 </h1>
-                <p className="subtitle has-text-white is-size-3 has-text-centered">
+                <p
+                  className="subtitle has-text-white is-size-3 has-text-centered"
+                  itemProp="abstract"
+                >
                   Automatically rotate your photos while viewing them
                 </p>
                 <p className="has-text-white has-text-centered">
@@ -54,7 +61,7 @@ const IndexPage = ({ data }) => (
                     href="https://github.com/nickguletskii/ori3nt8/releases"
                   >
                     <span className="icon">
-                      <FaDownload size="fa-2x" />
+                      <FaDownload size={32} />
                     </span>
                     <span>Download</span>
                   </a>{" "}
@@ -63,7 +70,7 @@ const IndexPage = ({ data }) => (
                     href="https://github.com/nickguletskii/ori3nt8"
                   >
                     <span className="icon">
-                      <FaGithub size="fa-2x" />
+                      <FaGithub size={32} />
                     </span>
                     <span>Source code</span>
                   </a>

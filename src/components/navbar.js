@@ -20,7 +20,7 @@ const Navbar = () => (
               href="https://github.com/nickguletskii/ori3nt8/releases"
             >
               <span className="icon">
-                <FaDownload size="fa-2x" />
+                <FaDownload size={32} />
               </span>
               <span>Download</span>
             </a>
