@@ -10,7 +10,7 @@ export const query = graphql`
   query {
     screen: file(relativePath: { eq: "ori3nt8_screenshot.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 100) {
+        fluid(maxWidth: 1200, quality: 20) {
           ...GatsbyImageSharpFluid
         }
       }
